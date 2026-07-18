@@ -27,7 +27,7 @@ Techniques: aggregate functions, GROUP BY, subqueries, CTEs, and window function
 
 
 
-**Key findings**
+**Findings**
 
 116 companies laid off 100% of staff, several had raised huge sums, including Britishvolt ($2.4B) and Quibi ($1.8B). Funding didn't guarantee survival.
 Largest single layoff event: Google - 12,000 employees (Jan 2023), ahead of Meta (11,000) and Amazon (10,000).
