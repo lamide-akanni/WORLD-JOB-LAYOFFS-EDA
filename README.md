@@ -2,7 +2,10 @@ World Layoffs — SQL Data Cleaning & EDA
 
 SQL project: taking a messy real-world dataset of global tech layoffs (March 2020 – March 2023) from raw CSV to clean, analysis-ready data, then exploring it to surface trends. Built in MySQL with MySQL Workbench.
 
-Picture 
+![SC1](images/sqlscript.png)
+
+c!c[SC 1](images/duplicateRD.png)
+c!c[Rolling total](images/finalRT.png)
 
 Dataset: ~2,361 records of layoff events — company, location, industry, headcount laid off, % of workforce, funding stage, country, funds raised.
 
