@@ -1,6 +1,6 @@
 **World Layoffs: SQL Data Cleaning & EDA**
 
-SQL project: taking a messy real-world dataset of global tech layoffs (March 2020 – March 2023) from raw CSV to clean, analysis-ready data, then exploring it to surface trends. Built in MySQL with MySQL Workbench.
+Taking a messy real-world dataset of global tech layoffs (March 2020 – March 2023) from raw CSV to clean, analysis-ready data, then exploring it to surface trends. Built in MySQL with MySQL Workbench.
 
 ![SC1](images/sqlscript.png)
 
@@ -9,7 +9,7 @@ Dataset: ~2,361 records of layoff events — company, location, industry, headco
 
 **Part 1: Data Cleaning**
 
-All work done on staging copies — the raw table is never modified.
+All work done on staging copies; the raw table is never modified.
 
 1. Removed duplicates. No unique ID existed, so I generated one with ROW_NUMBER() OVER (PARTITION BY ...) across all nine columns — partitioning on a partial column list falsely flags legitimate rows as duplicates. Since MySQL can't delete from a CTE, flagged rows were materialised into a second staging table and deleted there. 5 true duplicates removed (2,361 → 2,356).
 
