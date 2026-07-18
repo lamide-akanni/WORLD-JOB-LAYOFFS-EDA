@@ -5,17 +5,17 @@ Taking a messy real-world dataset of global tech layoffs (March 2020 – March 2
 ![SC1](images/sqlscript.png)
 
 
-Dataset: ~2,361 records of layoff events — company, location, industry, headcount laid off, % of workforce, funding stage, country, funds raised.
+Dataset: ~2,361 records of layoff events; company, location, industry, headcount laid off, % of workforce, funding stage, country, funds raised.
 
 **Part 1: Data Cleaning**
 
 All work done on staging copies; the raw table is never modified.
 
-1. Removed duplicates. No unique ID existed, so I generated one with ROW_NUMBER() OVER (PARTITION BY ...) across all nine columns — partitioning on a partial column list falsely flags legitimate rows as duplicates. Since MySQL can't delete from a CTE, flagged rows were materialised into a second staging table and deleted there. 5 true duplicates removed (2,361 → 2,356).
+1. Removed duplicates. No unique ID existed, so I generated one with ROW_NUMBER() OVER (PARTITION BY ...) across all nine columns - partitioning on a partial column list falsely flags legitimate rows as duplicates. Since MySQL can't delete from a CTE, flagged rows were materialised into a second staging table and deleted there. 5 true duplicates removed (2,361 → 2,356).
 
 2. Standardized values. Trimmed whitespace from company names; merged industry variants (Crypto, Crypto Currency, CryptoCurrency → Crypto); stripped the trailing period from United States.; converted date from text to a proper DATE column via STR_TO_DATE + ALTER TABLE.
 
-3. Handled nulls and blanks. Converted empty strings to NULL, then recovered missing industries with a self-join — copying the value from another row of the same company (e.g. Airbnb → Travel) instead of discarding data.
+3. Handled nulls and blanks. Converted empty strings to NULL, then recovered missing industries with a self-join - copying the value from another row of the same company (e.g. Airbnb → Travel) instead of discarding data.
 
 4. Removed unusable data. Deleted rows where both layoff metrics were NULL (no analytical value), and dropped the helper row_num column. Final table: 1,995 clean rows.
 
