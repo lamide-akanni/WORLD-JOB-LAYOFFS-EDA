@@ -10,7 +10,7 @@
 -- 2. Exploratory Data Analysis(EDA)
 -- 2.1. Get a feel for the scale
 -- 2.2. Totals by group (GROUP BY)
--- 2.3. Rolling total by month CTE + window function
+-- 2.3. Rolling total/month CTE + window function
 -- 2.4. Top 5 companies per year DENSE_RANK
 
 CREATE DATABASE world_layoffs;
