@@ -29,13 +29,13 @@ Techniques: aggregate functions, GROUP BY, subqueries, CTEs, and window function
 
 **Key findings**
 
-116 companies laid off 100% of staff — several had raised huge sums, including Britishvolt ($2.4B) and Quibi ($1.8B). Funding didn't guarantee survival.
-Largest single layoff event: Google — 12,000 employees (Jan 2023), ahead of Meta (11,000) and Amazon (10,000).
-Amazon leads cumulative layoffs (18,150 across multiple rounds), followed by Google and Meta.
-The US dominates: 256,559 laid off — over 7× second-place India (35,993).
+116 companies laid off 100% of staff, several had raised huge sums, including Britishvolt ($2.4B) and Quibi ($1.8B). Funding didn't guarantee survival.
+Largest single layoff event: Google - 12,000 employees (Jan 2023), ahead of Meta (11,000) and Amazon (10,000).
+Amazon leads in cumulative layoffs (18,150 across multiple rounds), followed by Google and Meta.
+The US top (256,559) laid off  over 7× second-place India (35,993).
 Consumer (45,182) and Retail (43,613) were the hardest-hit industries.
-The rolling monthly total shows a sharp acceleration from late 2022 into early 2023 — the first three months of 2023 alone rival full prior years.
-Year-by-year DENSE_RANK top-5: Uber led 2020, Bytedance 2021, Meta 2022, Google 2023 — the downturn shifted from pandemic-hit startups to big tech.
+The rolling monthly total shows a sharp acceleration from late 2022 into early 2023,  the first three months of 2023 alone rival full prior years.
+Year-by-year DENSE_RANK top-5: Uber led 2020, Bytedance 2021, Meta 2022, Google 2023. The downturn shifted from pandemic-hit startups to big tech.
 
 
 
