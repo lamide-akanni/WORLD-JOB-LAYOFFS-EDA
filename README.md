@@ -7,7 +7,7 @@ SQL project: taking a messy real-world dataset of global tech layoffs (March 202
 
 Dataset: ~2,361 records of layoff events — company, location, industry, headcount laid off, % of workforce, funding stage, country, funds raised.
 
-**Part 1 — Data Cleaning**
+**Part 1: Data Cleaning**
 
 All work done on staging copies — the raw table is never modified.
 
@@ -19,7 +19,7 @@ All work done on staging copies — the raw table is never modified.
 
 4. Removed unusable data. Deleted rows where both layoff metrics were NULL (no analytical value), and dropped the helper row_num column. Final table: 1,995 clean rows.
 
-**Part 2 — Exploratory Data Analysis**
+**Part 2: Exploratory Data Analysis**
 
 Techniques: aggregate functions, GROUP BY, subqueries, CTEs, and window functions (SUM() OVER, DENSE_RANK).
 
