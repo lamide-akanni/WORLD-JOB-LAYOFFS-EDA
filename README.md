@@ -7,14 +7,10 @@ SQL project: taking a messy real-world dataset of global tech layoffs (March 202
 
 Dataset: ~2,361 records of layoff events — company, location, industry, headcount laid off, % of workforce, funding stage, country, funds raised.
 
-
-
-
-Part 1 — Data Cleaning
+**Part 1 — Data Cleaning**
 
 All work done on staging copies — the raw table is never modified.
 
-![SC 2](images/duplicateRD.png)
 1. Removed duplicates. No unique ID existed, so I generated one with ROW_NUMBER() OVER (PARTITION BY ...) across all nine columns — partitioning on a partial column list falsely flags legitimate rows as duplicates. Since MySQL can't delete from a CTE, flagged rows were materialised into a second staging table and deleted there. 5 true duplicates removed (2,361 → 2,356).
 
 2. Standardized values. Trimmed whitespace from company names; merged industry variants (Crypto, Crypto Currency, CryptoCurrency → Crypto); stripped the trailing period from United States.; converted date from text to a proper DATE column via STR_TO_DATE + ALTER TABLE.
@@ -23,16 +19,15 @@ All work done on staging copies — the raw table is never modified.
 
 4. Removed unusable data. Deleted rows where both layoff metrics were NULL (no analytical value), and dropped the helper row_num column. Final table: 1,995 clean rows.
 
-Part 2 — Exploratory Data Analysis
+**Part 2 — Exploratory Data Analysis**
 
 Techniques: aggregate functions, GROUP BY, subqueries, CTEs, and window functions (SUM() OVER, DENSE_RANK).
 
-![Rolling total](images/finalRT.png)
+![SC2l](images/finalRT.png)
 
 
 
 **Key findings**
-
 
 116 companies laid off 100% of staff — several had raised huge sums, including Britishvolt ($2.4B) and Quibi ($1.8B). Funding didn't guarantee survival.
 Largest single layoff event: Google — 12,000 employees (Jan 2023), ahead of Meta (11,000) and Amazon (10,000).
